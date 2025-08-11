@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+.pytest_cache/
+.mypy_cache/
+
+# Virtual envs
+venv/
+.venv/
+
+# Artifacts
+artifacts/
+*.joblib
+
+# OS
+.DS_Store
+Thumbs.db
+.env
+
+# Contents inside uploads
+uploads/*

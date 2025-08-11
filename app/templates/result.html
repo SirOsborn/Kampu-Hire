@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kampu-Hire — Result</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #0b1b2b; --card: #0f2740; --accent: #1fb6ff; --accent-2: #38c0ff; --text: #e6f3ff; --muted: #a8cbe8; }
+    body { margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: linear-gradient(180deg, #08131f, var(--bg)); color: var(--text); }
+    .wrap { max-width: 720px; margin: 24px auto; padding: 16px; }
+    .card { background: linear-gradient(180deg, #0a1c2e, var(--card)); border: 1px solid rgba(56,192,255,0.15); border-radius: 14px; padding: 20px; box-shadow: 0 10px 30px rgba(31,182,255,0.10); }
+    .title { font-size: 22px; margin: 0 0 8px; }
+    .badge { display: inline-block; padding: 4px 10px; border-radius: 999px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #00263d; font-weight: 800; }
+    .muted { color: var(--muted); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h2 class="title">Position: {{POSITION}}</h2>
+      <p><span class="badge">Fit: {{FIT}}</span></p>
+      <p class="muted">Decision: <strong>{{DECISION}}</strong></p>
+      <div style="margin:8px 0 12px;">
+        <p class="muted">Signals:</p>
+        <ul class="muted" style="margin-top:0;">
+          <li>Keyword coverage: <strong>{{COVERAGE}}</strong></li>
+          <li>LLM score: <strong>{{LLM_SCORE}}</strong></li>
+          <li>Skill hits: <strong>{{SKILL_HITS}}</strong> — rule: <em>{{MODEL_RULE}}</em></li>
+        </ul>
+      </div>
+      <hr style="border-color: rgba(56,192,255,0.2);" />
+  <p><strong>Reasons</strong></p>
+      <p class="muted">{{REASONS}}</p>
+      <hr style="border-color: rgba(56,192,255,0.2);" />
+      
+      <p><a href="/" style="color: var(--accent); text-decoration: none;">← Back</a></p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+# Role presets: sectors and representative skills
+# HR can expand later. Used when user leaves keywords blank.
+
+Technology:
+  Software Engineer:
+    - Python
+    - JavaScript
+    - APIs
+    - SQL
+    - Cloud
+  Data Scientist:
+    - Python
+    - Machine Learning
+    - Pandas
+    - SQL
+    - Statistics
+Creative:
+  Graphic Designer:
+    - Photoshop
+    - Illustrator
+    - Figma
+    - Branding
+    - Layout
+  UX Designer:
+    - Figma
+    - Prototyping
+    - User Research
+    - Wireframing
+    - Usability Testing
+Education:
+  English Teacher:
+    - Classroom Management
+    - Lesson Planning
+    - Assessment
+    - ESL
+    - Communication
+  Math Teacher:
+    - Algebra
+    - Geometry
+    - Assessment
+    - Classroom Management
+    - Lesson Planning
+Business:
+  Marketing Specialist:
+    - SEO
+    - Content
+    - Analytics
+    - Social Media
+    - Campaigns
+  Sales Representative:
+    - Prospecting
+    - CRM
+    - Negotiation
+    - Closing
+    - Pipeline
+Operations:
+  Project Manager:
+    - Planning
+    - Scheduling
+    - Risk Management
+    - Stakeholder Management
+    - Reporting
+  Operations Analyst:
+    - Excel
+    - SQL
+    - Process Improvement
+    - Dashboards
+    - KPIs
+Healthcare:
+  Nurse:
+    - Patient Care
+    - Triage
+    - Documentation
+    - Medication
+    - Communication
+  Medical Assistant:
+    - Vitals
+    - Scheduling
+    - EHR
+    - Phlebotomy
+    - Sterilization
+Finance:
+  Accountant:
+    - GAAP
+    - Reconciliation
+    - Excel
+    - Financial Reporting
+    - Payables
+  Financial Analyst:
+    - Modeling
+    - Excel
+    - Forecasting
+    - PowerPoint
+    - Reporting
+Manufacturing:
+  QA Engineer:
+    - Inspection
+    - Documentation
+    - Root Cause
+    - ISO 9001
+    - CAPA
+  Production Supervisor:
+    - Scheduling
+    - Safety
+    - 5S
+    - Training
+    - KPIs
+Hospitality:
+  Hotel Receptionist:
+    - Customer Service
+    - Scheduling
+    - Billing
+    - Communication
+    - Problem Solving
+  Chef:
+    - Food Prep
+    - Sanitation
+    - Menu
+    - Line Cooking
+    - Inventory
+Logistics:
+  Warehouse Associate:
+    - Picking
+    - Packing
+    - Forklift
+    - Inventory
+    - Safety
+  Logistics Coordinator:
+    - Scheduling
+    - Tracking
+    - Documentation
+    - Communication
+    - ERP

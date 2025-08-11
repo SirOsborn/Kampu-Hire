@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kampu-Hire</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1b2b;
+      --card: #0f2740;
+      --accent: #1fb6ff; /* soft cyan-blue */
+      --accent-2: #38c0ff;
+      --text: #e6f3ff;
+      --muted: #a8cbe8;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: linear-gradient(180deg, #08131f, var(--bg)); color: var(--text); }
+    header { padding: 24px; text-align: center; }
+    header h1 { margin: 0; font-size: 28px; letter-spacing: 0.5px; }
+    main { max-width: 840px; margin: 24px auto; padding: 16px; }
+    .card { background: linear-gradient(180deg, #0a1c2e, var(--card)); border: 1px solid rgba(56,192,255,0.15); border-radius: 14px; padding: 20px; box-shadow: 0 10px 30px rgba(31,182,255,0.10); }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+    input[type="text"], input[type="number"], select { width: 100%; padding: 10px 12px; background: #0c2239; border: 1px solid rgba(56,192,255,0.2); border-radius: 10px; color: var(--text); outline: none; }
+    input[type="file"] { color: var(--muted); }
+    .btn { background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #00263d; font-weight: 700; padding: 12px 16px; border-radius: 10px; border: none; cursor: pointer; }
+    .btn:hover { filter: brightness(1.1); }
+    .muted { color: var(--muted); font-size: 12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kampu-Hire — Skills-first, Transparent Screening</h1>
+  </header>
+  <main>
+    <div class="card">
+      <form action="/score" method="post" enctype="multipart/form-data">
+    <div class="row">
+          <div>
+      <label for="position">Target Position(s)</label>
+      <input id="position" name="position" type="text" placeholder="Single role or multiple separated by newline" required />
+      <p class="muted">Tip: To compare roles, put each role on a new line. Example: English Teacher<br>Graphic Designer</p>
+          </div>
+          <div>
+      <label for="keywords">Skills/Keywords (comma/semicolon; multi-line to map per role)</label>
+      <input id="keywords" name="keywords" type="text" placeholder="Comma-separated; multi-line to align with roles" />
+      <p class="muted">If one line of keywords is provided, it applies to all roles. Use multiple lines to specify per-role skills.</p>
+          </div>
+        </div>
+        
+        <div style="margin:12px 0;">
+          <label for="file">Upload Resume (PDF/DOCX/TXT)</label>
+          <input id="file" name="file" type="file" accept=".pdf,.docx,.txt" required />
+        </div>
+        <div style="margin:8px 0 16px; display:flex; align-items:center; gap:8px;">
+          <input id="skill_only" name="skill_only" type="checkbox" />
+          <label for="skill_only">Skills-only (de-emphasize education)</label>
+        </div>
+        <div>
+          <button class="btn" type="submit">Evaluate Fit</button>
+        </div>
+        <p class="muted">We anonymize resumes and focus on skills, not schools or personal attributes.</p>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
