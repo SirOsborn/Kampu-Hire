@@ -1,56 +1,69 @@
-# Kampu‑Hire: Transparent, unbiased hiring model
+## Kampu‑Hire — Skills‑first, transparent resume screening (Web app)
 
-Open-source base model for AI-powered resume screening that is transparent, auditable, and bias-aware.
+Kampu‑Hire is a FastAPI web app that blends an explainable, skills‑first scorer with an LLM judge to produce one unbiased decision: Hire or Do not hire. Resumes are anonymized (names/emails/phones stripped) to reduce bias.
 
-What’s inside
-- PyTorch model on simple BoW vectors for transparency
-- Anonymization: removes names, emails, phones, and dampens prestige cues
-- Exported vocab + labels for reproducible scoring
+What you get
+- Single combined decision: transparent skills coverage + LLM verdict, with clear signals.
+- Multi‑sector role presets: auto‑fill skills for common roles across industries.
+- Strong anonymization: configurable name lists per region/gender loaded from data files.
 
 Project layout
-- `dataset/UpdatedResumeDataSet.csv` — Kaggle dataset
-- Web app in `app/` (LLM + transparent skills scoring)
-	- `data/dataset.py` — anonymization + dataset + vectorizer
-	- `models/mlp.py` — simple transparent multi layer perceptrons
-	- `train/trainer.py` — training loop and artifact export
-- `scripts/` — runners
-	- `train_pytorch.py` — train and save artifacts
-	- `score_pytorch.py` — score text or file with saved artifacts
-- `artifacts/` — saved model.pt, vocab.json, labels.json (created after training)
+- app/
+	- main.py — FastAPI entry
+	- routers/web.py — UI and scoring route (file upload; combined decision)
+	- services/
+		- skills_scorer.py — explainable, section‑aware keyword coverage
+		- llm_scorer.py — calls Gemini/OpenAI/Ollama with bias guardrails
+		- text_utils.py — anonymization + role presets + names loader
+	- templates/ — index.html (form), result.html (decision page)
+	- data/
+		- roles.yaml — role presets per sector (editable)
+		- names/ — JSON files with names per region/gender (you add 200+ lists here)
 
-Install
+Setup
+1) Install dependencies
 ```powershell
 python -m pip install -r requirements.txt
 ```
 
-Train (PyTorch)
+2) Configure environment (.env at repo root)
+- LLM_PROVIDER=openai | gemini | ollama (optional; auto‑detects by available keys)
+- OPENAI_API_KEY=... (for OpenAI‑compatible)
+- OPENAI_BASE_URL=https://api.openai.com/v1 (or compatible endpoint)
+- OPENAI_MODEL=gpt-4o-mini (or your model)
+- GEMINI_API_KEY=... (for Google Generative Language)
+- GEMINI_MODEL=gemini-1.5-flash
+- OLLAMA_HOST=http://localhost:11434
+- OLLAMA_MODEL=llama3.1:8b
+
+3) Add names (optional but recommended)
+- Put JSON arrays of names into app/data/names (e.g., khmer_male.json, khmer_female.json, vietnam_male.json, etc.).
+- The anonymizer loads every *.json and masks matches as name_token.
+- See app/data/names/README.txt for examples.
+
+Run the app
 ```powershell
-# uses dataset/UpdatedResumeDataSet.csv
-python ./scripts/train_pytorch.py
+python -m uvicorn app.main:app --reload --port 8000
 ```
+Open http://127.0.0.1:8000 and upload a resume (PDF/DOCX/TXT). Provide a role and optional skills. If skills are left blank, role presets from app/data/roles.yaml will be used.
 
-Score a resume (PyTorch)
-```powershell
-# from text
-python ./scripts/score_pytorch.py --text "Python, pandas, ML, SQL..."
+How scoring works
+- Transparent scorer: section‑aware, phrase‑tolerant keyword matching. Produces coverage (0..1) and reasons (matched/missing).
+- LLM scorer: prompts a model to return JSON {score (0..1), verdict (hire|do_not_hire), reasons} with bias guardrails.
+- Combined decision: we merge skill hits and the LLM verdict to output a single Hire/Do not hire with signals displayed.
 
-# from file
-python ./scripts/score_pytorch.py --file c:/path/to/resume.txt
-```
+Customize roles and skills
+- Edit app/data/roles.yaml to add your sectors/roles/skills.
+- If keywords are blank, the app auto‑loads skills from this file for the role name you enter.
 
-Audit fairness
-```powershell
-python ./src/audit_fairness.py
-```
+Bias reduction
+- Anonymize: remove names, emails, phones, and de‑emphasize education signals.
+- Skills‑only toggle: further reduces weight of non‑skill sections.
+- Regional names: load 200+ names per gender per region (Khmer, neighboring ASEAN, Japanese, Chinese, Korean, Western) into app/data/names for robust masking.
 
-Artifacts
-- `artifacts/model.pt`: trained PyTorch weights
-- `artifacts/vocab.json`: Bag of words vocabulary mapping
-- `artifacts/labels.json`: class index to name mapping
+Troubleshooting
+- If PDF text is empty, try a different extractor (PyMuPDF is a fallback). For scanned PDFs, enable OCR deps in requirements.txt and add Tesseract on your OS.
+- If no LLM keys are set, the app attempts local Ollama. Configure .env to use your provider.
 
-Integrations
-- The old `kampu_hire` package is deprecated. Use `app/services` utilities.
-
-Notes
-- This is anti‑blackbox by design: linear model + explicit features + exported weights.
-- Extend fairness with your own checks and ethically sourced annotations.
+License
+Open‑source. Use responsibly and ensure hiring decisions comply with local laws and ethical standards.
