@@ -34,3 +34,6 @@ Thumbs.db
 
 # Contents inside uploads
 uploads/*
+
+# Dataset files
+datasets/

@@ -14,3 +14,10 @@ PyYAML>=6.0.1
 # Optional OCR for scanned PDFs (requires Tesseract installed on OS)
 # pdf2image>=1.17.0
 # pytesseract>=0.3.10
+
+# For model training and explainability
+transformers>=4.41.2
+torch>=2.2.2
+scikit-learn>=1.5.0
+shap>=0.45.1
+pandas>=2.2.2
