@@ -1,0 +1,10 @@
+{
+  "accuracy": 0.9495892457057505,
+  "num_val_samples": 2678,
+  "data_path": "datasets/Preprocessed_Data.csv",
+  "text_columns": [
+    "Category",
+    "Text"
+  ],
+  "max_len": 192
+}
