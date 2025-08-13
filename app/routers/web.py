@@ -5,6 +5,9 @@ from pathlib import Path
 from app.services.skills_scorer import transparent_score
 from app.services.llm_scorer import call_llm
 from app.services.text_utils import load_role_keywords
+from app.routers.screening import load_model as load_clf, ScreenRequest
+from app.routers.screening import top_tokens_explanation  # used indirectly via API call
+import torch
 import io
 
 router = APIRouter()
@@ -71,21 +74,41 @@ async def score(request: Request,
     if len(kw_groups) == 1 and len(roles) > 1:
         kw_groups = kw_groups * len(roles)
 
-    def combine_decision(model_ok: bool | None, llm_verdict: str, llm_score: float, coverage: float, fit: float) -> bool:
+    def combine_decision(model_ok: bool | None,
+                         llm_verdict: str,
+                         llm_score: float,
+                         coverage: float,
+                         fit: float,
+                         trf_label: str | None,
+                         trf_conf: float | None) -> bool:
         llm_ok = (llm_verdict or '').lower().strip() == 'hire'
         # If no keyword signal, rely on LLM confidence
         if model_ok is None:
-            return llm_score >= 0.55 and llm_ok
-        # Agreement
-        if model_ok and llm_ok:
-            return True
-        if (not model_ok) and (not llm_ok):
-            return False
-        # Disagreement: require strong evidence
-        if llm_ok:
-            return (llm_score >= 0.70 and coverage >= 0.45) or fit >= 0.65
+            base_ok = llm_score >= 0.55 and llm_ok
         else:
-            return not (coverage < 0.40 and llm_score < 0.55)
+            # Agreement
+            if model_ok and llm_ok:
+                base_ok = True
+            elif (not model_ok) and (not llm_ok):
+                base_ok = False
+            else:
+                # Disagreement: require strong evidence
+                if llm_ok:
+                    base_ok = (llm_score >= 0.70 and coverage >= 0.45) or fit >= 0.65
+                else:
+                    base_ok = not (coverage < 0.40 and llm_score < 0.55)
+        # Incorporate transformer verdict if available
+        if trf_label is not None and trf_conf is not None:
+            trf_ok = (trf_label == 'suitable')
+            # Strong negative from transformer can veto unless very strong other evidence
+            if (not trf_ok) and trf_conf >= 0.90 and base_ok:
+                if not (coverage >= 0.65 and llm_score >= 0.75):
+                    return False
+            # Positive from transformer can rescue borderline cases
+            if trf_ok and trf_conf >= 0.60 and (not base_ok):
+                if (coverage >= 0.45) or (llm_score >= 0.65):
+                    return True
+        return base_ok
 
     results = []
     for i, role in enumerate(roles):
@@ -113,7 +136,20 @@ async def score(request: Request,
             import math
             model_required = max(2, math.ceil(0.6 * kw_count))
             model_ok = hits >= model_required
-        final_ok = combine_decision(model_ok, lout.get('verdict', ''), llm_score, coverage, fit)
+        # Transformer screening for this role (bias-aware)
+        try:
+            payload = ScreenRequest(
+                education='', role=role, skills=', '.join(kw_list),
+                languages='', work_experience='', certifications='', summary=raw
+            )
+            from app.routers.screening import screen_cv as _screen_cv
+            trf_resp = _screen_cv(payload)
+            trf_label = trf_resp.label
+            trf_conf = float(trf_resp.confidence)
+            trf_expl = trf_resp.explanation
+        except Exception:
+            trf_label, trf_conf, trf_expl = None, None, []
+        final_ok = combine_decision(model_ok, lout.get('verdict', ''), llm_score, coverage, fit, trf_label, trf_conf)
         decision = 'Hire' if final_ok else 'Do not hire'
         results.append({
             'role': role,
@@ -125,12 +161,20 @@ async def score(request: Request,
             'hits': hits,
             'kw_count': kw_count,
             'model_required': model_required,
-            'llm_verdict': lout.get('verdict', '')
+            'llm_verdict': lout.get('verdict', ''),
+            'trf_label': trf_label if trf_label is not None else 'N/A',
+            'trf_conf': trf_conf if trf_conf is not None else 0.0,
+            'trf_expl': trf_expl,
         })
 
     # Choose the single best role and render a single decision
     best = max(results, key=lambda r: r['fit']) if results else None
     detail = best or {'role': '', 'fit': 0, 'decision': 'Do not hire', 'coverage': 0, 'llm': 0, 'reasons': [], 'hits': 0, 'kw_count': 0, 'model_required': None}
+
+    # Use best role's transformer outputs (already computed per role)
+    model_label = detail.get('trf_label', 'N/A')
+    model_conf = float(detail.get('trf_conf', 0.0))
+    model_explain = detail.get('trf_expl', [])
     html = (Path(__file__).resolve().parents[1]/'templates'/'result.html').read_text(encoding='utf-8')
     html = html.replace('{{POSITION}}', detail['role'])
     html = html.replace('{{FIT}}', f"{detail['fit']:.3f}")
@@ -140,4 +184,7 @@ async def score(request: Request,
     html = html.replace('{{LLM_SCORE}}', f"{detail['llm']:.3f}")
     html = html.replace('{{SKILL_HITS}}', f"{detail['hits']} / {detail['kw_count']}" if detail['kw_count'] else 'N/A')
     html = html.replace('{{MODEL_RULE}}', f">= {detail['model_required']} skills" if detail.get('model_required') else 'LLM-only (no skills provided)')
+    html = html.replace('{{MODEL_LABEL}}', model_label)
+    html = html.replace('{{MODEL_CONF}}', f"{model_conf:.3f}")
+    html = html.replace('{{MODEL_EXPL}}', ', '.join(model_explain) if model_explain else 'N/A')
     return HTMLResponse(html)

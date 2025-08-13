@@ -23,30 +23,10 @@ Install
 python -m pip install -r requirements.txt
 ```
 
-Train (PyTorch)
+### To run the web app
 ```powershell
-# uses dataset/UpdatedResumeDataSet.csv
-python ./scripts/train_pytorch.py
+python -m uvicorn app.main:app --reload --port 8000
 ```
-
-Score a resume (PyTorch)
-```powershell
-# from text
-python ./scripts/score_pytorch.py --text "Python, pandas, ML, SQL..."
-
-# from file
-python ./scripts/score_pytorch.py --file c:/path/to/resume.txt
-```
-
-Audit fairness
-```powershell
-python ./src/audit_fairness.py
-```
-
-Artifacts
-- `artifacts/model.pt`: trained PyTorch weights
-- `artifacts/vocab.json`: Bag of words vocabulary mapping
-- `artifacts/labels.json`: class index to name mapping
 
 Integrations
 - The old `kampu_hire` package is deprecated. Use `app/services` utilities.
