@@ -2,6 +2,7 @@ fastapi>=0.111.0
 uvicorn[standard]>=0.30.0
 requests>=2.31.0
 python-dotenv>=1.0.1
+protobuf>=4.21.0
 
 # Document parsing
 pdfminer.six>=20221105

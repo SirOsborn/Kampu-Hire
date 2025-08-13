@@ -6,7 +6,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import numpy as np
 import os
 
-MODEL_DIR = "model/screening_model"
+MODEL_DIR = "model/transformer_model"
 
 router = APIRouter(prefix="/api/screen", tags=["screening"])
 

@@ -30,7 +30,7 @@ for p in _candidates:
         break
 if DATA_PATH is None:
     raise FileNotFoundError('No dataset found. Place Preprocessed_Data.csv in dataset/ or datasets/.')
-MODEL_OUT = 'model/screening_model'
+MODEL_OUT = 'model/transformer_model'
 MAX_LEN = 192  # shorter seq length to reduce GPU memory
 
 # 1. Load and preprocess data
