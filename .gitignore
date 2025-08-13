@@ -35,4 +35,5 @@ Thumbs.db
 # Contents inside uploads
 uploads/*
 
-# Dataset files
+# Dataset filesresults/checkpoint-5356/model.safetensors
+datasets/Preprocessed_Data.csv
