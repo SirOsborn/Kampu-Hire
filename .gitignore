@@ -34,3 +34,12 @@ Thumbs.db
 
 # Contents inside uploads
 uploads/*
+
+# Dataset files
+datasets/*
+
+# Model files
+model/transformer_model/*
+
+# Results
+results/*
