@@ -40,6 +40,7 @@ datasets/*
 
 # Model files
 model/transformer_model/*
+model/transformer_model_old/*
 
 # Results
 results/*
