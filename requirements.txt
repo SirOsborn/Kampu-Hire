@@ -12,6 +12,9 @@ PyMuPDF>=1.22.0
 # YAML for role presets
 PyYAML>=6.0.1
 
+# Optional fuzzy matching for local ontology miner
+rapidfuzz>=3.6.1
+
 # Optional OCR for scanned PDFs (requires Tesseract installed on OS)
 # pdf2image>=1.17.0
 # pytesseract>=0.3.10

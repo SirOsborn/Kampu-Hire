@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kampu-Hire HR Portal</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', system-ui, sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            background: rgba(255,255,255,0.95);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .header { text-align: center; margin-bottom: 40px; }
+        .logo { font-size: 32px; font-weight: 700; color: #667eea; margin-bottom: 10px; }
+        .subtitle { color: #666; font-size: 18px; }
+        
+        .tabs { display: flex; margin-bottom: 30px; border-bottom: 1px solid #eee; }
+        .tab { 
+            padding: 15px 30px; 
+            background: none; 
+            border: none; 
+            font-size: 16px; 
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        .tab.active { 
+            color: #667eea; 
+            border-bottom-color: #667eea;
+            font-weight: 600;
+        }
+        .tab:hover { background: #f5f5f5; }
+        
+        .section { display: none; }
+        .section.active { display: block; }
+        
+        .card { 
+            background: white; 
+            border-radius: 12px; 
+            padding: 24px; 
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+        }
+        .card h3 { color: #333; margin-bottom: 16px; }
+        
+        .form-group { margin-bottom: 20px; }
+        .form-group label { 
+            display: block; 
+            font-weight: 600; 
+            color: #444; 
+            margin-bottom: 8px; 
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e1e1e1;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .btn:hover { transform: translateY(-2px); }
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #495057;
+            border: 1px solid #dee2e6;
+        }
+        
+        .job-list { display: grid; gap: 16px; }
+        .job-item {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            transition: box-shadow 0.3s;
+        }
+        .job-item:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .job-title { font-size: 18px; font-weight: 600; color: #333; margin-bottom: 8px; }
+        .job-meta { color: #666; font-size: 14px; margin-bottom: 12px; }
+        .job-actions { display: flex; gap: 10px; }
+        
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px; }
+        .stat-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-number { font-size: 24px; font-weight: 700; color: #667eea; }
+        .stat-label { color: #666; font-size: 14px; }
+        
+        .portal-link {
+            background: #e8f5e8;
+            border: 1px solid #c3e6c3;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+        .portal-link strong { color: #2d5a2d; }
+        .portal-url { 
+            background: #f8f9fa; 
+            padding: 8px 12px; 
+            border-radius: 4px; 
+            font-family: monospace; 
+            font-size: 14px;
+            margin: 8px 0;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="logo">🎯 Kampu-Hire</h1>
+            <p class="subtitle">AI-Powered HR Recruitment Platform</p>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('jobs')">📋 Job Postings</button>
+            <button class="tab" onclick="switchTab('create')">➕ Create Job</button>
+            <button class="tab" onclick="switchTab('analytics')">📊 Analytics</button>
+        </div>
+        
+        <!-- Job Postings Section -->
+        <div id="jobs" class="section active">
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="total-jobs">{{TOTAL_JOBS}}</div>
+                    <div class="stat-label">Active Jobs</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="total-applications">{{TOTAL_APPLICATIONS}}</div>
+                    <div class="stat-label">Total Applications</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="avg-score">{{AVG_SCORE}}%</div>
+                    <div class="stat-label">Avg. Candidate Score</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>Active Job Postings</h3>
+                <div class="job-list" id="job-list">
+                    {{JOB_LIST}}
+                </div>
+            </div>
+        </div>
+        
+        <!-- Create Job Section -->
+        <div id="create" class="section">
+            <div class="card">
+                <h3>Create New Job Posting</h3>
+                <form action="/hr/jobs" method="post">
+                    <div class="form-group">
+                        <label for="title">Job Title *</label>
+                        <input type="text" id="title" name="title" required placeholder="e.g., Senior Data Analyst">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company" placeholder="e.g., Tech Innovators Inc.">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">Job Description *</label>
+                        <textarea id="description" name="description" rows="6" required 
+                                placeholder="Describe the role, responsibilities, and what you're looking for in a candidate..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="requirements">Key Requirements</label>
+                        <textarea id="requirements" name="requirements" rows="4" 
+                                placeholder="List specific skills, experience, and qualifications needed..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="hr_contact">HR Contact Email</label>
+                        <input type="email" id="hr_contact" name="hr_contact" placeholder="hr@company.com">
+                    </div>
+                    
+                    <button type="submit" class="btn">🚀 Create Job & Launch Application Portal</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Analytics Section -->
+        <div id="analytics" class="section">
+            <div class="card">
+                <h3>Recruitment Analytics</h3>
+                <p>📊 Coming soon: Advanced analytics dashboard with candidate insights, hiring trends, and AI evaluation metrics.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabName) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+        
+        function viewCandidates(jobId) {
+            window.location.href = `/hr/jobs/${jobId}/candidates`;
+        }
+        
+        function copyPortalLink(jobId) {
+            const url = `${window.location.origin}/apply/${jobId}`;
+            navigator.clipboard.writeText(url).then(() => {
+                alert('Application portal link copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+</html>

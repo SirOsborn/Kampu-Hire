@@ -16,6 +16,11 @@ class Settings:
     GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")
     OLLAMA_HOST: str = os.getenv("OLLAMA_HOST", "http://127.0.0.1:11434")
     OLLAMA_MODEL: str = os.getenv("OLLAMA_MODEL", "llama3.1")
+    SEA_LION_API_KEY: str | None = os.getenv("SEA_LION_API_KEY")
+    SEA_LION_BASE_URL: str = os.getenv("SEA_LION_BASE_URL", "https://api.sea-lion.ai/v1")
+    SEA_LION_MODEL: str = os.getenv("SEA_LION_MODEL", "aisingapore/Gemma-SEA-LION-v4-27B-IT")
+    MAX_TOKENS: int = int(os.getenv("MAX_TOKENS", "1000"))
+    RATE_LIMIT_DELAY: float = float(os.getenv("RATE_LIMIT_DELAY", "0"))
 
     # UI
     BRAND: str = os.getenv("BRAND", "Kampu-Hire")
