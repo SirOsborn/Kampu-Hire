@@ -1,133 +1,1129 @@
-# Role presets: sectors and representative skills
-# HR can expand later. Used when user leaves keywords blank.
+# Comprehensive Role Presets for Kampu-Hire HR Screening System
+# Structured by industry sectors with detailed technical and soft skills
+# Used for skill extraction, job description templates, and candidate matching
 
 Technology:
   Software Engineer:
     - Python
     - JavaScript
+    - TypeScript
+    - React
+    - Node.js
     - APIs
+    - REST
+    - GraphQL
     - SQL
-    - Cloud
+    - NoSQL
+    - MongoDB
+    - PostgreSQL
+    - Cloud Computing
+    - AWS
+    - Azure
+    - Docker
+    - Kubernetes
+    - Git
+    - CI/CD
+    - Agile
+    - Scrum
+    - DevOps
+    - Testing
+    - Unit Testing
+    - Integration Testing
+    - Problem Solving
+    - Code Review
+    - Documentation
+    - Team Collaboration
+    - Communication Skills
+    
+  Frontend Developer:
+    - HTML5
+    - CSS3
+    - JavaScript
+    - TypeScript
+    - React
+    - Vue.js
+    - Angular
+    - SASS
+    - LESS
+    - Webpack
+    - Responsive Design
+    - Mobile First
+    - Cross Browser Compatibility
+    - UI/UX Design
+    - Bootstrap
+    - Tailwind CSS
+    - Redux
+    - State Management
+    - Performance Optimization
+    - Accessibility
+    - SEO
+    - Web Standards
+    - Version Control
+    - Git
+    - Code Review
+    - Agile Development
+    - Problem Solving
+    - Attention to Detail
+    - Creative Thinking
+    
+  Backend Developer:
+    - Python
+    - Django
+    - Flask
+    - FastAPI
+    - Node.js
+    - Express.js
+    - Java
+    - Spring Boot
+    - C#
+    - .NET
+    - PHP
+    - Laravel
+    - Ruby
+    - Rails
+    - SQL
+    - PostgreSQL
+    - MySQL
+    - MongoDB
+    - Redis
+    - API Development
+    - REST APIs
+    - GraphQL
+    - Microservices
+    - Database Design
+    - Cloud Services
+    - AWS
+    - Docker
+    - Kubernetes
+    - System Architecture
+    - Security
+    - Authentication
+    - Performance Optimization
+    - Testing
+    - Documentation
+    - Problem Solving
+    - Analytical Thinking
+    
+  Full Stack Developer:
+    - Frontend Development
+    - Backend Development
+    - JavaScript
+    - Python
+    - React
+    - Node.js
+    - SQL
+    - NoSQL
+    - API Development
+    - Database Design
+    - Cloud Computing
+    - DevOps
+    - Git
+    - Agile
+    - Problem Solving
+    - System Design
+    - Code Review
+    - Testing
+    - Documentation
+    - Communication
+    - Team Collaboration
+    - Learning Agility
+    - Adaptability
+    
   Data Scientist:
     - Python
+    - R
     - Machine Learning
-    - Pandas
-    - SQL
+    - Deep Learning
     - Statistics
-Creative:
-  Graphic Designer:
-    - Photoshop
-    - Illustrator
-    - Figma
-    - Branding
-    - Layout
-  UX Designer:
-    - Figma
-    - Prototyping
-    - User Research
-    - Wireframing
-    - Usability Testing
-Education:
-  English Teacher:
-    - Classroom Management
-    - Lesson Planning
-    - Assessment
-    - ESL
-    - Communication
-  Math Teacher:
-    - Algebra
-    - Geometry
-    - Assessment
-    - Classroom Management
-    - Lesson Planning
-Business:
-  Marketing Specialist:
-    - SEO
-    - Content
-    - Analytics
-    - Social Media
-    - Campaigns
-  Sales Representative:
-    - Prospecting
-    - CRM
-    - Negotiation
-    - Closing
-    - Pipeline
-Operations:
-  Project Manager:
-    - Planning
-    - Scheduling
-    - Risk Management
-    - Stakeholder Management
-    - Reporting
-  Operations Analyst:
-    - Excel
+    - Pandas
+    - NumPy
+    - Scikit-learn
+    - TensorFlow
+    - PyTorch
     - SQL
-    - Process Improvement
-    - Dashboards
-    - KPIs
-Healthcare:
-  Nurse:
-    - Patient Care
-    - Triage
-    - Documentation
-    - Medication
+    - Data Analysis
+    - Data Visualization
+    - Matplotlib
+    - Seaborn
+    - Plotly
+    - Jupyter Notebooks
+    - Statistical Modeling
+    - Predictive Analytics
+    - A/B Testing
+    - Feature Engineering
+    - Model Evaluation
+    - Data Mining
+    - Big Data
+    - Spark
+    - Hadoop
+    - Cloud Platforms
+    - AWS
+    - Google Cloud
+    - Data Storytelling
+    - Business Intelligence
+    - Critical Thinking
+    - Problem Solving
     - Communication
-  Medical Assistant:
-    - Vitals
-    - Scheduling
-    - EHR
-    - Phlebotomy
-    - Sterilization
-Finance:
-  Accountant:
-    - GAAP
-    - Reconciliation
+    - Presentation Skills
+    
+  Data Analyst:
+    - SQL
+    - Python
+    - R
     - Excel
-    - Financial Reporting
-    - Payables
-  Financial Analyst:
-    - Modeling
-    - Excel
-    - Forecasting
-    - PowerPoint
+    - Power BI
+    - Tableau
+    - Data Visualization
+    - Statistical Analysis
+    - Data Cleaning
+    - Data Mining
     - Reporting
-Manufacturing:
-  QA Engineer:
-    - Inspection
-    - Documentation
-    - Root Cause
-    - ISO 9001
-    - CAPA
-  Production Supervisor:
-    - Scheduling
-    - Safety
-    - 5S
-    - Training
-    - KPIs
-Hospitality:
-  Hotel Receptionist:
-    - Customer Service
-    - Scheduling
-    - Billing
+    - Dashboard Creation
+    - Business Intelligence
+    - KPI Analysis
+    - Trend Analysis
+    - A/B Testing
+    - Google Analytics
+    - Database Management
+    - ETL Processes
+    - Critical Thinking
+    - Attention to Detail
     - Communication
     - Problem Solving
-  Chef:
-    - Food Prep
-    - Sanitation
-    - Menu
-    - Line Cooking
-    - Inventory
-Logistics:
-  Warehouse Associate:
-    - Picking
-    - Packing
-    - Forklift
-    - Inventory
-    - Safety
-  Logistics Coordinator:
-    - Scheduling
-    - Tracking
-    - Documentation
+    - Business Acumen
+    
+  DevOps Engineer:
+    - Linux
+    - Docker
+    - Kubernetes
+    - CI/CD
+    - Jenkins
+    - GitLab CI
+    - AWS
+    - Azure
+    - Google Cloud
+    - Terraform
+    - Ansible
+    - Chef
+    - Puppet
+    - Monitoring
+    - Logging
+    - Prometheus
+    - Grafana
+    - ELK Stack
+    - Shell Scripting
+    - Python
+    - Infrastructure as Code
+    - Version Control
+    - Git
+    - Security
+    - Network Administration
+    - Troubleshooting
+    - Automation
+    - Problem Solving
     - Communication
-    - ERP
+    - Team Collaboration
+    
+  QA Engineer:
+    - Manual Testing
+    - Automated Testing
+    - Test Planning
+    - Test Cases
+    - Selenium
+    - TestNG
+    - JUnit
+    - API Testing
+    - Postman
+    - Performance Testing
+    - Load Testing
+    - Security Testing
+    - Regression Testing
+    - Bug Tracking
+    - JIRA
+    - Test Documentation
+    - Agile Testing
+    - SDLC
+    - Quality Assurance
+    - Attention to Detail
+    - Analytical Thinking
+    - Problem Solving
+    - Communication
+    - Documentation Skills
+    
+  Mobile Developer:
+    - iOS Development
+    - Android Development
+    - Swift
+    - Kotlin
+    - Java
+    - Objective-C
+    - React Native
+    - Flutter
+    - Dart
+    - Xamarin
+    - Mobile UI/UX
+    - App Store Optimization
+    - Mobile Testing
+    - Performance Optimization
+    - API Integration
+    - Push Notifications
+    - In-App Purchases
+    - Mobile Security
+    - Version Control
+    - Git
+    - Agile Development
+    - Problem Solving
+    - Creativity
+    - User Experience Focus
+    - Communication
+    
+  System Administrator:
+    - Linux Administration
+    - Windows Server
+    - Network Administration
+    - Security
+    - Backup Solutions
+    - Virtualization
+    - VMware
+    - Hyper-V
+    - Cloud Computing
+    - AWS
+    - Azure
+    - Monitoring Tools
+    - Shell Scripting
+    - PowerShell
+    - DNS
+    - DHCP
+    - Active Directory
+    - Firewall Configuration
+    - Troubleshooting
+    - Documentation
+    - Problem Solving
+    - Attention to Detail
+    - Communication
+    - Time Management
+
+Creative:
+  Graphic Designer:
+    - Adobe Photoshop
+    - Adobe Illustrator
+    - Adobe InDesign
+    - Figma
+    - Sketch
+    - Canva
+    - Branding
+    - Logo Design
+    - Layout Design
+    - Typography
+    - Color Theory
+    - Print Design
+    - Digital Design
+    - Web Design
+    - Social Media Graphics
+    - Marketing Materials
+    - Brand Guidelines
+    - Visual Communication
+    - Creative Thinking
+    - Attention to Detail
+    - Time Management
+    - Client Communication
+    - Project Management
+    - Creativity
+    - Problem Solving
+    
+  UX Designer:
+    - User Experience Design
+    - User Interface Design
+    - Figma
+    - Sketch
+    - Adobe XD
+    - Prototyping
+    - Wireframing
+    - User Research
+    - Usability Testing
+    - Information Architecture
+    - Interaction Design
+    - Design Systems
+    - Accessibility
+    - Mobile Design
+    - Web Design
+    - Design Thinking
+    - User Journey Mapping
+    - Persona Development
+    - A/B Testing
+    - Analytics
+    - HTML/CSS
+    - Collaboration
+    - Communication
+    - Problem Solving
+    - Empathy
+    - Critical Thinking
+    
+  UI Designer:
+    - User Interface Design
+    - Visual Design
+    - Figma
+    - Sketch
+    - Adobe Creative Suite
+    - Prototyping
+    - Design Systems
+    - Component Libraries
+    - Typography
+    - Color Theory
+    - Layout Design
+    - Icon Design
+    - Mobile UI
+    - Web UI
+    - Responsive Design
+    - Animation
+    - Micro-interactions
+    - Brand Guidelines
+    - Style Guides
+    - HTML/CSS
+    - Attention to Detail
+    - Creativity
+    - Communication
+    - Collaboration
+    - Time Management
+    
+  Web Designer:
+    - Web Design
+    - HTML5
+    - CSS3
+    - JavaScript
+    - Responsive Design
+    - Mobile First Design
+    - Adobe Creative Suite
+    - Figma
+    - WordPress
+    - Webflow
+    - UI/UX Design
+    - SEO Basics
+    - Accessibility
+    - Cross Browser Compatibility
+    - Performance Optimization
+    - Content Management Systems
+    - Typography
+    - Color Theory
+    - Layout Design
+    - User Experience
+    - Problem Solving
+    - Creativity
+    - Communication
+    - Time Management
+    - Client Relations
+
+Business:
+  Marketing Specialist:
+    - Digital Marketing
+    - SEO
+    - SEM
+    - Google Ads
+    - Facebook Ads
+    - Content Marketing
+    - Email Marketing
+    - Social Media Marketing
+    - Google Analytics
+    - Marketing Automation
+    - Lead Generation
+    - Campaign Management
+    - Brand Management
+    - Market Research
+    - A/B Testing
+    - Conversion Optimization
+    - Copywriting
+    - Content Creation
+    - Influencer Marketing
+    - Marketing Strategy
+    - Data Analysis
+    - Communication
+    - Creativity
+    - Analytical Thinking
+    - Project Management
+    
+  Sales Representative:
+    - Sales Prospecting
+    - Lead Generation
+    - Cold Calling
+    - Email Outreach
+    - CRM Management
+    - Salesforce
+    - HubSpot
+    - Sales Pipeline Management
+    - Negotiation
+    - Closing Techniques
+    - Relationship Building
+    - Customer Needs Analysis
+    - Product Knowledge
+    - Market Knowledge
+    - Sales Presentations
+    - Proposal Writing
+    - Account Management
+    - Territory Management
+    - Sales Reporting
+    - KPI Tracking
+    - Communication Skills
+    - Persuasion
+    - Active Listening
+    - Resilience
+    - Goal Oriented
+    
+  Sales Manager:
+    - Sales Leadership
+    - Team Management
+    - Sales Strategy
+    - Territory Planning
+    - Sales Training
+    - Performance Management
+    - CRM Management
+    - Sales Forecasting
+    - Pipeline Management
+    - Key Account Management
+    - Budget Management
+    - Sales Reporting
+    - Market Analysis
+    - Competitive Analysis
+    - Coaching
+    - Mentoring
+    - Recruitment
+    - Goal Setting
+    - Leadership
+    - Communication
+    - Decision Making
+    - Problem Solving
+    - Strategic Thinking
+    - Team Building
+    
+  Business Analyst:
+    - Business Analysis
+    - Requirements Gathering
+    - Process Improvement
+    - Data Analysis
+    - SQL
+    - Excel
+    - Power BI
+    - Tableau
+    - Business Intelligence
+    - Stakeholder Management
+    - Documentation
+    - Use Case Development
+    - User Stories
+    - Process Mapping
+    - Gap Analysis
+    - Risk Assessment
+    - Project Management
+    - Agile Methodology
+    - Scrum
+    - Communication
+    - Critical Thinking
+    - Problem Solving
+    - Analytical Skills
+    - Attention to Detail
+    
+  Product Manager:
+    - Product Strategy
+    - Product Development
+    - Market Research
+    - Competitive Analysis
+    - User Research
+    - Product Roadmap
+    - Feature Prioritization
+    - Agile Methodology
+    - Scrum
+    - Stakeholder Management
+    - Cross-functional Collaboration
+    - Data Analysis
+    - KPI Tracking
+    - A/B Testing
+    - Product Launch
+    - Go-to-market Strategy
+    - User Experience
+    - Technical Understanding
+    - Leadership
+    - Communication
+    - Strategic Thinking
+    - Problem Solving
+    - Decision Making
+    - Innovation
+    
+  Customer Success Manager:
+    - Customer Success
+    - Account Management
+    - Relationship Building
+    - Customer Onboarding
+    - Customer Retention
+    - Churn Reduction
+    - Upselling
+    - Cross-selling
+    - Customer Health Monitoring
+    - CRM Management
+    - Customer Training
+    - Support Coordination
+    - Renewal Management
+    - Customer Advocacy
+    - Feedback Collection
+    - Process Improvement
+    - Data Analysis
+    - Reporting
+    - Communication
+    - Empathy
+    - Problem Solving
+    - Proactive Thinking
+    - Relationship Management
+    - Negotiation
+
+Operations:
+  Project Manager:
+    - Project Management
+    - Project Planning
+    - Project Scheduling
+    - Resource Management
+    - Risk Management
+    - Stakeholder Management
+    - Budget Management
+    - Timeline Management
+    - Team Coordination
+    - Communication
+    - Reporting
+    - Quality Assurance
+    - Change Management
+    - Agile Methodology
+    - Scrum
+    - Waterfall
+    - Microsoft Project
+    - JIRA
+    - Confluence
+    - Leadership
+    - Problem Solving
+    - Decision Making
+    - Organization
+    - Time Management
+    
+  Operations Manager:
+    - Operations Management
+    - Process Optimization
+    - Performance Management
+    - Quality Control
+    - Supply Chain Management
+    - Inventory Management
+    - Cost Control
+    - Budget Management
+    - Team Leadership
+    - Staff Management
+    - Training and Development
+    - Safety Management
+    - Compliance
+    - Reporting
+    - KPI Monitoring
+    - Continuous Improvement
+    - Lean Principles
+    - Six Sigma
+    - Leadership
+    - Communication
+    - Problem Solving
+    - Decision Making
+    - Strategic Thinking
+    - Analytical Skills
+    
+  Business Operations Analyst:
+    - Operations Analysis
+    - Process Improvement
+    - Data Analysis
+    - Excel
+    - SQL
+    - Power BI
+    - Tableau
+    - KPI Development
+    - Performance Metrics
+    - Dashboard Creation
+    - Reporting
+    - Process Mapping
+    - Workflow Analysis
+    - Cost Analysis
+    - Efficiency Analysis
+    - Automation Opportunities
+    - Change Management
+    - Documentation
+    - Stakeholder Communication
+    - Critical Thinking
+    - Problem Solving
+    - Analytical Skills
+    - Attention to Detail
+    - Communication
+
+Finance:
+  Financial Analyst:
+    - Financial Analysis
+    - Financial Modeling
+    - Excel
+    - Financial Reporting
+    - Budgeting
+    - Forecasting
+    - Variance Analysis
+    - Investment Analysis
+    - Risk Assessment
+    - Valuation
+    - Cash Flow Analysis
+    - Ratio Analysis
+    - PowerPoint
+    - Data Visualization
+    - SQL
+    - Bloomberg Terminal
+    - Capital Markets
+    - Accounting Principles
+    - GAAP
+    - Analytical Thinking
+    - Attention to Detail
+    - Communication
+    - Problem Solving
+    - Time Management
+    
+  Accountant:
+    - Accounting
+    - GAAP
+    - Financial Reporting
+    - General Ledger
+    - Accounts Payable
+    - Accounts Receivable
+    - Reconciliation
+    - Month-end Close
+    - Year-end Close
+    - Tax Preparation
+    - Audit Support
+    - Excel
+    - QuickBooks
+    - SAP
+    - Oracle
+    - Budgeting
+    - Cost Accounting
+    - Fixed Assets
+    - Payroll
+    - Compliance
+    - Attention to Detail
+    - Analytical Skills
+    - Organization
+    - Time Management
+    - Communication
+    
+  Controller:
+    - Financial Controller
+    - Financial Management
+    - Financial Reporting
+    - Management Reporting
+    - Budgeting
+    - Forecasting
+    - Internal Controls
+    - SOX Compliance
+    - Audit Management
+    - Team Leadership
+    - Staff Management
+    - Month-end Close
+    - Year-end Close
+    - Tax Planning
+    - Risk Management
+    - Process Improvement
+    - ERP Systems
+    - GAAP
+    - Strategic Planning
+    - Leadership
+    - Communication
+    - Decision Making
+    - Analytical Thinking
+    - Problem Solving
+
+Healthcare:
+  Registered Nurse:
+    - Patient Care
+    - Clinical Assessment
+    - Medication Administration
+    - IV Therapy
+    - Wound Care
+    - Patient Education
+    - Documentation
+    - Electronic Health Records
+    - Infection Control
+    - Emergency Response
+    - Vital Signs Monitoring
+    - Care Planning
+    - Discharge Planning
+    - Family Education
+    - Interdisciplinary Collaboration
+    - Quality Improvement
+    - Safety Protocols
+    - Compassion
+    - Communication
+    - Critical Thinking
+    - Attention to Detail
+    - Stress Management
+    - Empathy
+    - Teamwork
+    
+  Medical Assistant:
+    - Vital Signs
+    - Patient Intake
+    - Medical History
+    - Appointment Scheduling
+    - Electronic Health Records
+    - Insurance Verification
+    - Phlebotomy
+    - Injections
+    - EKG
+    - Sterilization
+    - Inventory Management
+    - Medical Coding
+    - Patient Communication
+    - Phone Triage
+    - Laboratory Procedures
+    - Medical Terminology
+    - HIPAA Compliance
+    - Multi-tasking
+    - Organization
+    - Communication
+    - Empathy
+    - Attention to Detail
+    - Customer Service
+    - Professionalism
+    
+  Healthcare Administrator:
+    - Healthcare Administration
+    - Operations Management
+    - Staff Management
+    - Budget Management
+    - Compliance
+    - HIPAA
+    - Healthcare Regulations
+    - Quality Improvement
+    - Electronic Health Records
+    - Healthcare Information Systems
+    - Strategic Planning
+    - Policy Development
+    - Risk Management
+    - Vendor Management
+    - Performance Metrics
+    - Staff Training
+    - Patient Experience
+    - Communication
+    - Leadership
+    - Problem Solving
+    - Decision Making
+    - Analytical Thinking
+    - Organization
+    - Time Management
+
+Education:
+  Teacher:
+    - Lesson Planning
+    - Curriculum Development
+    - Classroom Management
+    - Student Assessment
+    - Differentiated Instruction
+    - Educational Technology
+    - Student Engagement
+    - Parent Communication
+    - Professional Development
+    - Collaboration
+    - Data Analysis
+    - Special Needs Support
+    - Behavior Management
+    - Educational Standards
+    - Learning Objectives
+    - Grading
+    - Report Writing
+    - Conference Facilitation
+    - Patience
+    - Communication
+    - Creativity
+    - Adaptability
+    - Empathy
+    - Organization
+    
+  Educational Administrator:
+    - Educational Leadership
+    - Staff Management
+    - Curriculum Oversight
+    - Budget Management
+    - Policy Implementation
+    - Student Performance Analysis
+    - Teacher Evaluation
+    - Professional Development
+    - Parent Relations
+    - Community Engagement
+    - Strategic Planning
+    - Compliance
+    - Educational Standards
+    - Technology Integration
+    - Crisis Management
+    - Conflict Resolution
+    - Leadership
+    - Communication
+    - Decision Making
+    - Problem Solving
+    - Visionary Thinking
+    - Collaboration
+    - Integrity
+    - Emotional Intelligence
+
+Retail:
+  Store Manager:
+    - Retail Management
+    - Staff Management
+    - Sales Management
+    - Inventory Management
+    - Customer Service
+    - Visual Merchandising
+    - Loss Prevention
+    - Budget Management
+    - Performance Metrics
+    - Staff Training
+    - Scheduling
+    - POS Systems
+    - Vendor Relations
+    - Store Operations
+    - Safety Compliance
+    - Team Leadership
+    - Problem Solving
+    - Communication
+    - Multitasking
+    - Customer Focus
+    - Adaptability
+    - Results Oriented
+    - Time Management
+    - Leadership
+    
+  Sales Associate:
+    - Customer Service
+    - Product Knowledge
+    - Sales Techniques
+    - Cash Handling
+    - POS Systems
+    - Inventory Management
+    - Visual Merchandising
+    - Customer Needs Assessment
+    - Upselling
+    - Cross-selling
+    - Returns Processing
+    - Store Maintenance
+    - Team Collaboration
+    - Communication
+    - Active Listening
+    - Patience
+    - Enthusiasm
+    - Adaptability
+    - Problem Solving
+    - Time Management
+    - Reliability
+    - Positive Attitude
+    - Customer Focus
+    - Teamwork
+
+Customer Service:
+  Customer Service Representative:
+    - Customer Service
+    - Phone Support
+    - Email Support
+    - Chat Support
+    - Problem Resolution
+    - Product Knowledge
+    - CRM Systems
+    - Ticketing Systems
+    - Call Center Operations
+    - Multi-channel Support
+    - Escalation Procedures
+    - Documentation
+    - Customer Satisfaction
+    - Active Listening
+    - Empathy
+    - Patience
+    - Communication
+    - Problem Solving
+    - Stress Management
+    - Time Management
+    - Adaptability
+    - Professionalism
+    - Conflict Resolution
+    - Positive Attitude
+    
+  Customer Success Specialist:
+    - Customer Success
+    - Account Management
+    - Customer Onboarding
+    - Product Training
+    - Customer Health Monitoring
+    - Renewal Management
+    - Upselling
+    - Customer Feedback
+    - Support Coordination
+    - Process Improvement
+    - CRM Management
+    - Data Analysis
+    - Reporting
+    - Relationship Building
+    - Communication
+    - Empathy
+    - Problem Solving
+    - Proactive Thinking
+    - Organization
+    - Time Management
+    - Customer Focus
+    - Results Oriented
+    - Collaboration
+    - Adaptability
+
+Human Resources:
+  HR Generalist:
+    - Human Resources
+    - Recruitment
+    - Employee Relations
+    - Performance Management
+    - Compensation and Benefits
+    - HR Policies
+    - Employment Law
+    - HRIS Systems
+    - Training and Development
+    - Onboarding
+    - Offboarding
+    - Compliance
+    - Conflict Resolution
+    - Employee Engagement
+    - Workforce Planning
+    - HR Analytics
+    - Communication
+    - Confidentiality
+    - Problem Solving
+    - Interpersonal Skills
+    - Organization
+    - Attention to Detail
+    - Empathy
+    - Judgment
+    
+  Recruiter:
+    - Recruitment
+    - Talent Acquisition
+    - Candidate Sourcing
+    - Interviewing
+    - Applicant Tracking Systems
+    - LinkedIn Recruiting
+    - Boolean Search
+    - Reference Checking
+    - Offer Negotiation
+    - Employer Branding
+    - Relationship Building
+    - Market Knowledge
+    - Networking
+    - Social Media Recruiting
+    - Diversity Hiring
+    - Communication
+    - Persuasion
+    - Assessment Skills
+    - Time Management
+    - Organization
+    - Persistence
+    - Relationship Building
+    - Sales Mindset
+    - Empathy
+
+Legal:
+  Paralegal:
+    - Legal Research
+    - Document Preparation
+    - Case Management
+    - Court Filing
+    - Client Communication
+    - Legal Writing
+    - Discovery Support
+    - Trial Preparation
+    - Contract Review
+    - Compliance Monitoring
+    - Legal Software
+    - Database Management
+    - Scheduling
+    - Billing
+    - Confidentiality
+    - Attention to Detail
+    - Organization
+    - Communication
+    - Research Skills
+    - Analytical Thinking
+    - Time Management
+    - Professionalism
+    - Discretion
+    - Multitasking
+    
+  Legal Assistant:
+    - Administrative Support
+    - Document Management
+    - Calendar Management
+    - Client Relations
+    - Phone Support
+    - Email Management
+    - Filing Systems
+    - Court Documents
+    - Legal Correspondence
+    - Appointment Scheduling
+    - Travel Arrangements
+    - Billing Support
+    - Time Entry
+    - Office Management
+    - Confidentiality
+    - Organization
+    - Communication
+    - Attention to Detail
+    - Multitasking
+    - Professionalism
+    - Discretion
+    - Computer Skills
+    - Customer Service
+    - Reliability
+
+Consulting:
+  Management Consultant:
+    - Management Consulting
+    - Strategic Planning
+    - Business Analysis
+    - Process Improvement
+    - Change Management
+    - Project Management
+    - Stakeholder Management
+    - Data Analysis
+    - Financial Modeling
+    - Market Research
+    - Competitive Analysis
+    - Presentation Skills
+    - Client Management
+    - Solution Design
+    - Implementation Planning
+    - Performance Metrics
+    - Communication
+    - Critical Thinking
+    - Problem Solving
+    - Leadership
+    - Adaptability
+    - Analytical Skills
+    - Influence
+    - Professionalism
+    
+  IT Consultant:
+    - IT Consulting
+    - Systems Analysis
+    - Technology Assessment
+    - Solution Architecture
+    - Implementation Planning
+    - Project Management
+    - Vendor Management
+    - Risk Assessment
+    - Cost Analysis
+    - Technical Documentation
+    - Client Relations
+    - Training Delivery
+    - Change Management
+    - Quality Assurance
+    - Performance Optimization
+    - Communication
+    - Technical Expertise
+    - Problem Solving
+    - Analytical Thinking
+    - Leadership
+    - Adaptability
+    - Customer Focus
+    - Business Acumen
+    - Innovation
